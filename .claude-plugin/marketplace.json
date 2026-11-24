@@ -157,6 +157,16 @@
         "ref": "0.3.6"
       },
       "description": "Connect and interact with Spanner data using natural language."
+    },
+    {
+      "name": "google-analytics",
+      "source": "./",
+      "strict": false,
+      "description": "GA4 Admin and Data API skills.",
+      "skills": [
+        "./skills/analytics/google-analytics-admin-api-basics",
+        "./skills/analytics/google-analytics-data-api-basics"
+      ]
     }
   ]
 }
