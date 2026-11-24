@@ -1,0 +1,28 @@
+name: Sync analytics skills from google/skills
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday, 06:00 UTC
+  workflow_dispatch:       # lets you run it by hand
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pull latest analytics skills and copy into the plugin
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git remote add upstream https://github.com/google/skills.git
+          git fetch --depth 1 upstream main
+          git checkout upstream/main -- skills/analytics
+          for s in google-analytics-admin-api-basics google-analytics-data-api-basics; do
+            rm -rf plugins/google-analytics/skills/$s
+            cp -r skills/analytics/$s plugins/google-analytics/skills/$s
+          done
+          git add -A
+          git diff --cached --quiet || git commit -m "Sync analytics skills from google/skills"
+          git push
