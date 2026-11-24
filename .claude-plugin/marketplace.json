@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "google-analytics",
-      "source": ".",
+      "source": "./plugins/google-analytics",
       "description": "GA4 Admin and Data API skills."
     }
   ]
