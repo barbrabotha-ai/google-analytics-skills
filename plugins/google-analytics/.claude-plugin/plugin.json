@@ -1,6 +1,5 @@
 {
   "name": "google-analytics",
-  "version": "1.0.0",
   "description": "GA4 Admin and Data API skills.",
   "author": {
     "name": "Google LLC"
