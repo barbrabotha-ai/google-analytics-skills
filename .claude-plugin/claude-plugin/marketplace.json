@@ -1,0 +1,17 @@
+{
+  "name": "barbra-google-plugins",
+  "owner": {
+    "name": "barbrabotha-ai"
+  },
+  "metadata": {
+    "version": "0.0.1",
+    "description": "Google Analytics skills, forked from google/skills."
+  },
+  "plugins": [
+    {
+      "name": "google-analytics",
+      "source": "./plugins/google-analytics",
+      "description": "GA4 Admin and Data API skills."
+    }
+  ]
+}
